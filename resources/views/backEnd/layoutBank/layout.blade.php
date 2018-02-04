@@ -1,4 +1,4 @@
-@extends('backLayout.app') @section('title') Crear nuevo Banco @stop @section('content')
+@extends('backLayout.app') @section('title') Procesar layout del Banco @stop @section('content')
 
 <h1>Procesar layout del Banco </h1>
 <hr/> {!! Form::open(['url' => 'admin/layout', 'class' => 'form-horizontal', 'files'=>'true']) !!}

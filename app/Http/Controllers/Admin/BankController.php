@@ -83,7 +83,8 @@ class BankController extends Controller
      * @return Response
      */
     public function edit($id)
-    {$payments_forms = PaymentForm::pluck('name', 'id');
+    {   
+        $payments_forms = PaymentForm::pluck('name', 'id');
         $campuses = Campus::pluck('name', 'id');
         $bank = Bank::findOrFail($id);
 
@@ -127,6 +128,12 @@ class BankController extends Controller
         Session::flash('status', 'success');
 
         return redirect('admin/bank');
+    }
+
+    public function testCadenas()
+    {
+        $cadena = "juan carlos";
+        echo password_generator();
     }
 
     public function addVar($id)

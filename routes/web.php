@@ -28,3 +28,5 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => ['web']], function () {
 	Route::resource('admin/variable', 'Admin\\VariableController');
 });
+
+Route::get('admin/testCadenas', 'Admin\\BankController@testCadenas');
