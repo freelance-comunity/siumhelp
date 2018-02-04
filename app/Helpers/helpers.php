@@ -104,5 +104,4 @@ function extract_str($str, $num)
 	return $finalStr;
 }
 
-
 ?>
