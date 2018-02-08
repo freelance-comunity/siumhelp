@@ -105,7 +105,7 @@ class BankController extends Controller
         $bank = Bank::findOrFail($id);
         $bank->update($request->all());
 
-        Session::flash('message', 'Bank updated!');
+        Session::flash('message', 'Banco actualizado.');
         Session::flash('status', 'success');
 
         return redirect('admin/bank');

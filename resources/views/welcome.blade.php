@@ -82,7 +82,6 @@
                     SIUM <br> AYUDA
                 </div>
             </div>
-            <a href="http://localhost:8888/siumhelp/public/admin/layout" target="_blank" onclick="window.open(this.href, this.target, 'width=600,height=700'); return false;">Link popup</a>
         </div>
     </body>
 </html>

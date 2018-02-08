@@ -85,8 +85,7 @@
 
 	<footer class="footer">
 		<div class="container">
-			&copy; {{ date('Y') }}. Desarrollado por
-			<a href="https://github.com/jcmontejo">Juan Carlos Montejo</a>
+			&copy; {{ date('Y') }}. Universidad Maya
 			<br/>
 		</div>
 	</footer>
