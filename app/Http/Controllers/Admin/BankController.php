@@ -4,12 +4,15 @@ namespace App\Http\Controllers\Admin;
 
 use App\Bank;
 use App\Campus;
+use App\StudentInscription;
+use App\Student;
 use App\Http\Controllers\Controller;
 use App\PaymentForm;
 use App\Variable;
 use Illuminate\Http\Request;
 use Session;
 use Carbon\Carbon;
+use DB;
 
 class BankController extends Controller
 {
@@ -63,7 +66,7 @@ class BankController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $id 
      *
      * @return Response
      */
@@ -206,6 +209,14 @@ class BankController extends Controller
                     $day = substr($date, 0, 2);
                     $knownDate = Carbon::create($year, $month, $day);
                     $date_complete = $knownDate->toDateString();
+                    $number = substr($line, $vars->bank_start, $vars->bank_length);
+
+                    //$student_inscription = StudentInscription::where('bank_number', $number)->first();
+                    $student_inscription = DB::table('student_inscription')->where([
+                        ['bank_number', '=', $number],
+                        ])->first();
+                    
+                    $student = Student::find($student_inscription->student_id);
 
                     echo "# de Banco: " . substr($line, $vars->bank_start, $vars->bank_length);
                     echo "<br/>";
@@ -221,6 +232,7 @@ class BankController extends Controller
                     echo "<br>";
                     echo "**********************";
                     echo "<br>";
+                    echo "Alumno: "."<b>". $student->name.' '.$student->last_name.' '.$student->second_lastname."</b>";
                 }
             }
         } catch (\Exception $e) {

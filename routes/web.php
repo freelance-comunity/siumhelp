@@ -30,3 +30,7 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::get('admin/testCadenas', 'Admin\\BankController@testCadenas');
+
+Route::get('sium','MateriaController@index');
+
+Route::get('asignacion', 'MateriaController@asignacion');

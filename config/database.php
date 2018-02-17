@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -61,6 +61,19 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
             'password' => env('DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+            'sslmode' => 'prefer',
+        ],
+
+        'sium' => [
+            'driver' => 'pgsql',
+            'host' => env('SIUM_HOST', '192.168.0.150'),
+            'port' => env('SIUM_PORT', '5432'),
+            'database' => env('SIUM_DATABASE', 'sium_pruebas'),
+            'username' => env('SIUM_USERNAME', 'sistemas'),
+            'password' => env('SIUM_PASSWORD', 'sistemas1010'),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
